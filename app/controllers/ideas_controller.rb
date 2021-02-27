@@ -10,14 +10,14 @@ class IdeasController < ApplicationController
   def create
     @idea = Idea.new(idea_params)
 
-    # if @post.save
-    #   flash[:notice] = "投稿が保存できました"
-    #   redirect_to root_path
-    # else    
-    #   @post = Post.new
-    #   flash.now[:alert] = "投稿できません、もう一度入力してください"
-    #   render :new
-    # end
+    if @idea.save
+      flash[:notice] = "投稿が保存できました"
+      redirect_to root_path
+    else    
+      @idea = Idea.new
+      flash.now[:alert] = "投稿できません、もう一度入力してください"
+      render :new
+    end
   end
 
   private
