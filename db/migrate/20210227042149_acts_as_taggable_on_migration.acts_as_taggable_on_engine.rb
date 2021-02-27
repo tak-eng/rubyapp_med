@@ -7,7 +7,7 @@ end
 ActsAsTaggableOnMigration.class_eval do
   def self.up
     create_table ActsAsTaggableOn.tags_table do |t|
-      t.string :name
+      t.string :name, null:false
       t.timestamps
     end
 
