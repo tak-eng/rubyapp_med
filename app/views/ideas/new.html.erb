@@ -1,0 +1,11 @@
+<%= form_with url: ideas_path, local: true do |f| %>
+  <div class="#">
+    <h2>アイデア本文</h2>
+    <%= f.text_area :body, class: "#", placeholder: "アイデア名" %>
+  </div>
+  <div class="#">
+    <h2>カテゴリー</h2>
+    <%= f.text_field :tag_list, class: "#", placeholder: "関連する項目" %>
+  </div>
+  <%= f.submit '投稿する' %>
+<% end %>
